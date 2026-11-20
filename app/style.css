@@ -1,0 +1,175 @@
+/* Leonida Legend — a neon-dusk look of our own: deep ink, sunset gradient,
+   palm-teal accents. System fonts only, no images, nothing fetched. */
+
+:root {
+  --ink: #14101f;
+  --ink-2: #1d1830;
+  --panel: #221c3a;
+  --panel-2: #2a2350;
+  --line: #3d3468;
+  --text: #f2ecff;
+  --muted: #b7abd9;
+  --pink: #ff5da2;
+  --orange: #ffb35c;
+  --teal: #3fe0c5;
+  --platinum: #9be8ff;
+  --gold: #ffd75e;
+  --silver: #d7dbe2;
+  --bronze: #e09a5f;
+  --danger: #ff7a6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #120e22 0%, var(--ink) 340px);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 28px 32px 18px;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--pink), var(--orange), var(--teal)) 1;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--pink), var(--orange) 55%, var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline { margin: 6px 0 0; color: var(--muted); max-width: 560px; }
+
+.progress-box { min-width: 300px; flex: 0 1 380px; }
+.progress-line { display: flex; justify-content: space-between; align-items: baseline; }
+.progress-line strong { font-size: 20px; }
+#progress-percent { font-size: 20px; color: var(--teal); font-weight: 700; }
+.progress-bar { height: 12px; background: var(--ink-2); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--pink), var(--orange), var(--teal)); transition: width 0.3s ease; }
+.progress-grades { margin: 0; color: var(--muted); font-size: 13px; text-transform: capitalize; }
+
+.tabs { display: flex; gap: 8px; padding: 14px 32px 0; }
+.tab {
+  background: var(--ink-2); color: var(--muted); border: 1px solid var(--line);
+  border-bottom: none; border-radius: 10px 10px 0 0; padding: 10px 18px;
+  font-size: 15px; cursor: pointer;
+}
+.tab.is-active { background: var(--panel); color: var(--text); font-weight: 700; box-shadow: inset 0 3px 0 var(--pink); }
+
+main { padding: 0 32px 32px; }
+.view { background: var(--panel); border: 1px solid var(--line); border-radius: 0 12px 12px 12px; padding: 20px; }
+.view-title { margin: 0 0 12px; font-size: 26px; }
+.view-intro { color: var(--muted); max-width: 900px; margin-top: 0; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+.tool { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+.tool input[type="search"], .tool select {
+  background: var(--ink-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px; font-size: 14px;
+}
+.tool-search input { min-width: 230px; }
+.tool-check { flex-direction: row; align-items: center; gap: 6px; font-size: 14px; padding-bottom: 8px; }
+.tool-io { flex-direction: row; gap: 8px; }
+
+.btn {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; display: inline-block;
+}
+.btn:hover { border-color: var(--teal); }
+.btn-small { padding: 5px 10px; font-size: 13px; }
+.btn-ghost { background: transparent; }
+.file-btn { cursor: pointer; }
+
+.kind-chips { flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; }
+.kind-chip {
+  background: var(--ink-2); color: var(--muted); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer;
+}
+.kind-chip.is-active { color: var(--ink); background: var(--teal); border-color: var(--teal); font-weight: 700; }
+
+.result-line { color: var(--muted); font-size: 13px; margin: 14px 0 10px; }
+
+.checklist-layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(320px, 5fr); gap: 20px; align-items: start; }
+.card-list { display: flex; flex-direction: column; gap: 10px; max-height: 1060px; overflow-y: auto; padding-right: 6px; }
+
+.card { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.card.is-earned { border-color: var(--teal); }
+.card.is-selected { outline: 2px solid var(--pink); }
+.card-top { display: flex; gap: 12px; align-items: flex-start; }
+.card-titles { flex: 1; min-width: 0; }
+.card-name { margin: 0; font-size: 17px; }
+.card-desc { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.blurred { filter: blur(5px); user-select: none; }
+.earned-toggle { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); cursor: pointer; }
+.earned-toggle input { width: 18px; height: 18px; accent-color: var(--teal); }
+
+.gem {
+  flex: 0 0 auto; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 15px; color: #191225; border-radius: 8px; margin: 4px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.gem-platinum { background: linear-gradient(135deg, #e8fbff, var(--platinum)); }
+.gem-gold { background: linear-gradient(135deg, #fff3c4, var(--gold)); }
+.gem-silver { background: linear-gradient(135deg, #ffffff, var(--silver)); }
+.gem-bronze { background: linear-gradient(135deg, #ffc79a, var(--bronze)); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip { font-size: 12px; border-radius: 999px; padding: 2px 9px; border: 1px solid var(--line); color: var(--muted); }
+.chip-kind { border-color: var(--teal); color: var(--teal); }
+.chip-hidden { border-color: var(--muted); }
+.chip-missable { border-color: var(--danger); color: var(--danger); font-weight: 700; }
+.chip-count { border-color: var(--orange); color: var(--orange); }
+
+.card-actions { display: flex; gap: 8px; margin-top: 10px; }
+
+.detail-panel { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 18px; position: sticky; top: 12px; }
+.detail-empty { color: var(--muted); }
+.detail-head { display: flex; gap: 12px; align-items: center; }
+.detail-name { margin: 0; font-size: 24px; }
+.detail-grade { margin: 2px 0 0; color: var(--muted); text-transform: capitalize; }
+.detail-official { margin: 14px 0 2px; font-size: 17px; font-style: italic; border-left: 3px solid var(--orange); padding-left: 12px; }
+.detail-official-note { color: var(--muted); font-size: 12px; margin: 0 0 6px; }
+.detail-missable { background: #3a1f28; border: 1px solid var(--danger); color: #ffc9c2; border-radius: 8px; padding: 8px 12px; }
+.detail-subhead { margin: 16px 0 6px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); }
+.detail-guide { margin: 0; }
+.detail-count { margin: 0; color: var(--orange); }
+.detail-sources { margin: 0; padding-left: 18px; }
+.detail-sources-note { color: var(--muted); font-size: 12px; }
+.detail-toggle { margin-top: 16px; width: 100%; padding: 10px; font-weight: 700; }
+
+.stage-card, .missable-card { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+.stage-head { display: flex; gap: 12px; align-items: baseline; }
+.stage-number { background: var(--pink); color: #fff; font-weight: 800; border-radius: 999px; padding: 2px 12px; font-size: 13px; }
+.stage-title { margin: 0; font-size: 20px; }
+.stage-summary { color: var(--text); max-width: 980px; }
+.stage-trophies { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.stage-trophy { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.stage-trophy:hover { border-color: var(--pink); }
+.stage-habits { color: var(--muted); margin: 6px 0 0; padding-left: 18px; }
+
+.missable-head { display: flex; gap: 10px; align-items: center; }
+.missable-name { margin: 0; font-size: 19px; }
+.missable-official { font-style: italic; color: var(--orange); margin: 8px 0 4px; }
+.missable-guide { margin: 4px 0; max-width: 980px; }
+.missable-sources { color: var(--muted); font-size: 13px; }
+
+.no-results { color: var(--muted); }
+.site-footer { padding: 0 32px 28px; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 900px) {
+  .checklist-layout { grid-template-columns: 1fr; }
+  .card-list { max-height: none; }
+  .detail-panel { position: static; }
+}

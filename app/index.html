@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <h1>Leonida Legend</h1>
+    <p class="tagline">The GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, every guide in our own words and cited.</p>
+  </div>
+  <div class="progress-box">
+    <div class="progress-line">
+      <strong id="progress-text">0 of 55 earned</strong>
+      <span id="progress-percent">0%</span>
+    </div>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <p class="progress-grades" id="progress-grades"></p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" class="tab is-active" data-view="checklist">Checklist &amp; guides</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to platinum</button>
+  <button type="button" class="tab" data-view="missables">Missable watch</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="toolbar">
+      <label class="tool tool-search">Search
+        <input id="search" type="search" placeholder="Trophy, mission, activity…">
+      </label>
+      <label class="tool">Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <div class="tool kind-chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+      <label class="tool">Status
+        <select id="status-filter">
+          <option value="all">Earned &amp; unearned</option>
+          <option value="earned">Earned only</option>
+          <option value="unearned">Unearned only</option>
+        </select>
+      </label>
+      <label class="tool tool-check">
+        <input id="hide-earned" type="checkbox"> Hide earned
+      </label>
+      <label class="tool tool-check">
+        <input id="shield-toggle" type="checkbox" checked> Spoiler shield
+      </label>
+      <div class="tool tool-io">
+        <button type="button" class="btn" id="export-btn">Export progress</button>
+        <label class="btn file-btn">Import progress
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </label>
+      </div>
+    </div>
+    <p class="result-line" id="result-line"></p>
+    <div class="checklist-layout">
+      <div class="card-list" id="card-list"></div>
+      <aside class="detail-panel" id="detail-panel" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2 class="view-title">Roadmap to the platinum</h2>
+    <div id="roadmap-body"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <h2 class="view-title">Missable watch</h2>
+    <div id="missables-body"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Leonida Legend is an unofficial fan guide. Trophy names and descriptions are shown as PlayStation publishes them; every guide here is written for this page and cites its sources. Progress is stored only in your browser.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
